@@ -27,7 +27,7 @@ function setgauge () {
 				gauges[2].value = res;
 };
 
-var urlb = "https://seed.o3node.org:10331"	
+var urlb = "https://seed1.neo.org:10331"	
 
 // NODE 1
 async function node1 () {
