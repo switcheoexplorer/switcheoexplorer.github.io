@@ -29,7 +29,7 @@ function setgauge () {
 				gauges[2].value = res;
 };
  
-//var urlb = "https://seed.o3node.org:10331"	
+
 
 function bestblocks () {
 
@@ -51,10 +51,6 @@ function bestblocks () {
 }
 
 
-<<<<<<< HEAD
-=======
-var urlb = "https://seed1.neo.org:10331"	
->>>>>>> cb9fb1ad10a0d02fa5898bd755bf0cd1e4ae08ae
 
 // NODE 1
 async function node1 () {
