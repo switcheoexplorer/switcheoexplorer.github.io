@@ -19,7 +19,7 @@ function setgauge () {
 				var sum = 0;
 				for (var i = 0; i < 5; ++i) {	
 					avg[i] = (avgb[i] - avgt[i]/30);
-					if (avg[i] < -3) avg[i] =  avg[i]*2; 
+					//if (avg[i] < -3) avg[i] =  avg[i]*2; 
 					if (avg[i] < -120) avg[i] = -120;
 					sum += avg[i];
 				};				
@@ -33,7 +33,7 @@ function setgauge () {
 
 function bestblocks () {
 
-	var urlb1 = "https://seed.o3node.org:10331";
+	var urlb1 = "https://seed1.switcheo.network:10331";
 	var urlb2 = "https://seed1.neo.org:10331";
 	
 
@@ -55,7 +55,7 @@ function bestblocks () {
 // NODE 1
 async function node1 () {
 	
-		
+	try {	
 		var block, height, time, ago, peers, mem, ver, best;
 		var url = "https://seed1.switcheo.network:10331";
 		
@@ -89,11 +89,9 @@ async function node1 () {
 				if (vm.diff1 < -3 || vm.counter1 > 120) {document.getElementById('nod1').style.color = "orange"} 
 				else {document.getElementById('nod1').style.color = "limegreen"}
 				
-
-				
           	});
 			
-			
+		} catch(e) {document.getElementById('nod1').style.color = "red"};	
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;
 				document.getElementById('ver1').innerText =  ver;
@@ -114,7 +112,7 @@ async function node1 () {
 // NODE 2
 async function node2 () {
 
-		
+	try {	
 		var block, height, time, ago, peers, mem, ver, best;
 		var url = "https://seed2.switcheo.network:10331"
 		
@@ -148,7 +146,7 @@ async function node2 () {
 				
           	});
 				    
-			
+		} catch(e) {document.getElementById('nod2').style.color = "red"};		
 				  
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;
@@ -170,7 +168,7 @@ async function node2 () {
 // NODE 3		
 async function node3 () {
 
-		
+	try {	
 		var block, height, time, ago, peers, mem, ver, best;
 		var url = "https://seed3.switcheo.network:10331"
 		
@@ -204,7 +202,8 @@ async function node3 () {
 				
           	});
 				   
-			
+		} catch(e) {document.getElementById('nod3').style.color = "red"};
+
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;
 				document.getElementById('ver3').innerText = ver;
@@ -225,7 +224,7 @@ async function node3 () {
 // NODE 4
 async function node4 () {
 
-		
+	try {	
 		var block, height, time, ago, peers, mem, ver, best;
 		var url = "https://seed4.switcheo.network:10331"
 		
@@ -258,7 +257,8 @@ async function node4 () {
 					else {document.getElementById('nod4').style.color = "limegreen"}	
           	});
 				    
-			
+		} catch(e) {document.getElementById('nod4').style.color = "red"};
+
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;
 				document.getElementById('ver4').innerText = ver;
@@ -279,7 +279,7 @@ async function node4 () {
 // NODE 5
 async function node5 () {
 
-
+try {
 		var block, height, time, ago, peers, mem, ver, best;
 		var url = "https://seed5.switcheo.network:10331"
 		
@@ -309,9 +309,10 @@ async function node5 () {
 				vm.diff5 = height - Math.max.apply(null, vm.bestb) + 1;
 				document.getElementById('height5').innerText = height + ' (' + vm.diff5 + ')';
 					if (vm.diff5 < -3 || vm.counter5 > 120) {document.getElementById('nod5').style.color = "orange"} 
-					else {document.getElementById('nod5').style.color = "limegreen"}
+					else {document.getElementById('nod5').style.color = "limegreen"} 
           	});
 				  
+} catch(e) {document.getElementById('nod5').style.color = "red"};
 
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;

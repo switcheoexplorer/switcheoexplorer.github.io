@@ -271,11 +271,11 @@ async function timing() {
 var vm = new Vue({
 el: '#api',
 data: {
-diff1: -60,
-diff2: -60,	
-diff3: -60,
-diff4: -60,
-diff5: -60,
+diff1: -120,
+diff2: -120,	
+diff3: -120,
+diff4: -120,
+diff5: -120,
 best: [],
 counter1: -1,
 counter2: -1,
