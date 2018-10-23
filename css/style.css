@@ -1,0 +1,181 @@
+body {	
+	background: #212A3F ;
+	color: #FFFFFF;	
+	text-align: center;
+	overflow: scroll;
+	}
+	
+tr {	
+	color: limegreen;
+}	
+	
+td {	
+	text-align: center;
+	background: #212A3F ;
+}
+
+th {
+	color:  #FFFFFF;
+	text-align: center;
+	background: #212A3F ;
+}
+
+	
+/* fadein image */
+#fade {
+	z-index: -1;
+	position: absolute;
+	height: 365px;
+	left: 0;
+	right: 0;
+	width: 100%;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+	
+	
+/* button select contract */
+	
+.button-group {
+margin:auto;
+}
+
+.button-group > input {
+  display: none;
+  margin:auto;
+  }
+  
+ .button-group > label {
+ width:105px;
+ } 
+ 
+.button-group input:checked + label,
+.button-group input:checked + label:active {
+  background-color: #22BB5B; font-weight:bold;
+}
+
+/* display DOM after load js */	
+
+[v-cloak] > * { display:none; }
+[v-cloak]::before { content: "Chrome, Firefox, Opera and Edge are supported browsers."; }
+
+/* tabs zone */
+        
+        .containertab {
+            margin: 0 auto ;
+            padding: 15px;
+					
+        }
+        
+        /* tabs container */
+        
+        .tabs {           
+            padding: 15px 15px 0px 15px;
+            margin: -10px auto;
+			background: inherit;
+			border: 0px;	
+        }
+        /* style windows */
+        
+        .tabs > section {
+            display: none;
+            padding: 15px 15px 0px 15px;
+            background: #32374B;
+            border: 0px;
+			border-radius: 5px 5px 0 0;
+			border-top: 1px solid #009933	
+        }
+        
+	.grad {
+	 background: linear-gradient( #32374B, #212A3F );
+	 height:20px;
+	}      
+        /* hide checkbox */
+        
+        .tabs > input {
+            display: none;   
+        }
+        /* style balane history sumnmary */
+        
+        .tabs > label {
+            display: inline-block;
+            margin: 0 0 -1px 0;
+            padding: 10px 0px;
+			width: 110px;
+            font-weight: 600;
+            text-align: center;
+            color: #aaa;
+            border: 0px solid #32374B;
+			
+            border-width: 1px 1px 0px 1px;
+            background: #212A3F;
+            border-radius: 5px 5px 0 0;
+        }
+           
+        /* style tabs on hover */
+        
+        .tabs > label:hover {
+            color: #888;
+            cursor: pointer;
+        }
+        /* style active tab */
+        
+        .tabs > input:checked + label {
+            color: #fff;
+            border-top: 1px solid #009933;
+            border-bottom: 1px solid #32374B;
+            background: #32374B;
+        }
+        /* activation */
+		#tab000:checked ~ #content-tab000,
+		#tab00:checked ~ #content-tab00,
+        #tab0:checked ~ #content-tab0,
+        #tab1:checked ~ #content-tab1,
+        #tab2:checked ~ #content-tab2,
+		#tab3:checked ~ #content-tab3,
+		#tab4:checked ~ #content-tab4
+         {
+            display: block;
+        }
+      
+        /*change tab`slabel for small screen */
+        
+        @media screen and (max-width: 400px) {
+            .tabs > label {
+                padding: 10px;
+            }
+        }
