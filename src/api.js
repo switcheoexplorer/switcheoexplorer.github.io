@@ -6,10 +6,9 @@
  
   
 // SET FEES
- 
+
 var trig = 1;
 async function feeVolume (x) {
-	
 	
 	if (vm.tabn == 'fee' && trig == 0 && x == 0)  { return } ; //run only first time for click on tab
 	
@@ -231,6 +230,10 @@ var addr10 = "AJdZA4UftshLwVAS4YAc9k274GmwDmkJgj";	//address neo v1 contract
 var mt = [], ms = [], mb = [], ma = [];
 
 // set dex balance in gauge
+
+setTimeout(timing, 1000);
+setInterval(timing, 60000);
+
 async function timing() {
 	var addrneo = [];
 	(vm.contr == "v20") ? addrneo[0] = addr20 : 
@@ -276,7 +279,7 @@ diff2: -120,
 diff3: -120,
 diff4: -120,
 diff5: -120,
-best: [],
+
 counter1: -1,
 counter2: -1,
 counter3: -1,
@@ -490,8 +493,8 @@ mounted() {
 	//setTimeout(node5,100);
 	
 	//setTimeout(setgauge, 3000); 	 
-	setTimeout(timing, 500);// waiting for drawing canavas
-	setInterval(timing, 60000); //run timer
+	//setTimeout(timing, 1000);// waiting for drawing canavas
+	//setInterval(timing, 60000); //run timer
 },
 watch: {
 
