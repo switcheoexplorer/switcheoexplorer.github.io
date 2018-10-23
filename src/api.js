@@ -282,6 +282,7 @@ counter2: -1,
 counter3: -1,
 counter4: -1,
 counter5: -1,
+bestb: [],
 
 results: {},
 tokens: {},
