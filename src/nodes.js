@@ -2,7 +2,7 @@
 // set value gauge
 	bestblocks();
 	setInterval(bestblocks, 5000);
-	setTimeout(runnodes, 500);
+	setTimeout(runnodes, 1000);
 	function runnodes () {
 	node1();
 	node2();
