@@ -15,7 +15,7 @@ function setgauge () {
 	var avgb = [vm.diff1, vm.diff2, vm.diff3, vm.diff4, vm.diff5];
 	var avgt = [vm.counter1, vm.counter2, vm.counter3, vm.counter4, vm.counter5]
 	var avg = [];	
-	document.getElementById('test').innerText = avgb;
+	
 				var sum = 0;
 				for (var i = 0; i < 5; ++i) {	
 					avg[i] = (avgb[i] - avgt[i]/30);
