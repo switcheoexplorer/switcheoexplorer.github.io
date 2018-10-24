@@ -1,5 +1,6 @@
 
 
+	
 	// monitoring status
 	var trig1 = 0, trig2 = 0,trig3 = 0, trig4 = 0, trig5 = 0;
 	
@@ -60,7 +61,8 @@ function setgauge () {
 	var avg = [];	
 	
 				var sum = 0;
-				for (var i = 0; i < 5; ++i) {	
+				for (var i = 0; i < 5; ++i) {
+					if (avgb[i] == 'Infinity') {avgb[i] = -120;}
 					avg[i] = (avgb[i] - avgt[i]/30);
 					if (avg[i] < -120) avg[i] = -120;
 					sum += avg[i];
@@ -72,7 +74,7 @@ function setgauge () {
 };
  
 
- async function bestblocks () {
+ async function bestblocks (call) {
 try {
 	await axios.get('https://api.neoscan.io/api/main_net/v1/get_all_nodes').then(function(response) {
 		neos = response.data; 
@@ -81,6 +83,7 @@ try {
 			}
 		});
 	} catch(e) {document.getElementById('neosapi').innerText = "Neoscan API  is unreachable! Best block is not defined.";}
+call();
 }
 
 
