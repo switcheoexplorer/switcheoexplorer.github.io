@@ -231,9 +231,6 @@ var mt = [], ms = [], mb = [], ma = [];
 
 // set dex balance in gauge
 
-setTimeout(timing, 1000);
-setInterval(timing, 60000);
-
 async function timing() {
 	var addrneo = [];
 	(vm.contr == "v20") ? addrneo[0] = addr20 : 

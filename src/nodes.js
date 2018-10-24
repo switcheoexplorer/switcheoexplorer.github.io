@@ -1,21 +1,16 @@
 
-// set value gauge
-	bestblocks();
-	setInterval(bestblocks, 5000);
-	setTimeout(runnodes, 1000);
-	function runnodes () {
-	node1();
-	node2();
-	node3();
-	node4();
-	node5();
-	}
-	setInterval(setgauge, 5000);
 
+ function runnodes () {
+	 node1();
+	 node2();
+	 node3();
+	 node4();
+	 node5();	 
+	};
 
 // set gauge 2	
 function setgauge () {
-	
+	try {
 	var avgb = [vm.diff1, vm.diff2, vm.diff3, vm.diff4, vm.diff5];
 	var avgt = [vm.counter1, vm.counter2, vm.counter3, vm.counter4, vm.counter5]
 	var avg = [];	
@@ -26,9 +21,9 @@ function setgauge () {
 					if (avg[i] < -120) avg[i] = -120;
 					sum += avg[i];
 				};				
-				var res = 120+sum/5; 
+				var res = 120 + sum/5; 
 				if (res > 120) res = 120;
-				
+			} catch(e) {alert(1)}			
 				gauges[2].value = res;
 };
  
@@ -41,7 +36,7 @@ function setgauge () {
 		vm.bestb[i] = neos[i].height; 
 		}
 	});
-
+	call();
 }
 
 
@@ -87,7 +82,7 @@ async function node1 () {
           	});
 			
 		} catch(e) {document.getElementById('nod1').style.color = "red";
-					 document.getElementById('ver1').style.color = "unreachable"};	
+					 document.getElementById('ver1').innerText = "unreachable"};	
 
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;
