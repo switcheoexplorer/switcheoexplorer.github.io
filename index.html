@@ -45,6 +45,18 @@
 <title>Switcheo Smart Contract Explorer</title>
 </head><body>
 
+<script>
+    window.onload = function() {  
+    setTimeout(timing, 500); // set dex balance on gauge 0
+    setInterval(timing, 60000); 
+    setTimeout(bestblocks(runnodes), 100); //found best block and run nodes monitor
+    setInterval(bestblocks, 5000);
+    setInterval(setgauge, 5000) // run gauge 2
+    }  
+</script>
+
+       
+
 <img id = "fade" src = "./img/bg.jpg">
 <div class="container" id="api" style = "min-width: 890px" v-cloak>
 <img  style="height:47px; margin:0px 10px 20px 0px" src = "./img/logo.svg"><span  style="font-size:42px;">Explorer</span>
