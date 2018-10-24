@@ -82,7 +82,7 @@ async function node1 () {
           	});
 			
 		} catch(e) {document.getElementById('nod1').style.color = "red";
-					 document.getElementById('ver1').innerText = "unreachable"};	
+					 document.getElementById('ver1').innerText = "unreachable"; setTimeout(node1, 30000)};	
 
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;
@@ -141,7 +141,7 @@ async function node2 () {
           	});
 				    
 		} catch(e) {document.getElementById('nod2').style.color = "red";
-		document.getElementById('ver2').innerText = "unreachable"};		
+		document.getElementById('ver2').innerText = "unreachable"; setTimeout(node2, 30000)};		
 				  
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;
@@ -198,7 +198,7 @@ async function node3 () {
           	});
 				   
 		} catch(e) {document.getElementById('nod3').style.color = "red";
-		document.getElementById('ver3').innerText = "unreachable"};
+		document.getElementById('ver3').innerText = "unreachable"; setTimeout(node3, 30000)};
 
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;
@@ -254,7 +254,7 @@ async function node4 () {
           	});
 				    
 		} catch(e) {document.getElementById('nod4').style.color = "red";
-		document.getElementById('ver4').innerText = "unreachable"};
+		document.getElementById('ver4').innerText = "unreachable"; setTimeout(node4, 30000)};
 
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;
@@ -310,7 +310,7 @@ try {
           	});
 				  
 } catch(e) {document.getElementById('nod5').style.color = "red";
-			document.getElementById('ver5').innerText = "unreachable"};
+			document.getElementById('ver5').innerText = "unreachable"; setTimeout(node5, 30000)};
 
 			neo.node(url).poll(pollingPolicy).getVersion().notify(function (result) {
 				var ver = result.useragent;
