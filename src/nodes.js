@@ -2,13 +2,15 @@
 
 	
 	// monitoring status
-	var trig1 = 0, trig2 = 0,trig3 = 0, trig4 = 0, trig5 = 0;
+	var trig1 = -1, trig2 = -1, trig3 = -1, trig4 = -1, trig5 = -1;
 	
 	async function monitor () {
 		
 		try {
-			await neo.node('https://seed1.switcheo.network:10331').getBestBlockHash().then(function (result) {}); 
-			if (trig1 == 0) {node1(); trig1 = 1;};
+			await neo.node('https://seed1.switcheo.network:10331').getBestBlockHash().then(function (result) {
+				if (trig1 <= 0) {node1()};
+			}); 
+			
 			
 		} catch(e) {
 			document.getElementById('nod1').style.color = "red";
@@ -17,8 +19,10 @@
 			}
 
 		try {
-			await neo.node('https://seed2.switcheo.network:10331').getBestBlockHash().then(function (result) {});
-			if (trig2 == 0) {node2(); trig2 = 1};
+			await neo.node('https://seed2.switcheo.network:10331').getBestBlockHash().then(function (result) {
+				if (trig2 <= 0) {node2()};
+			});
+			
 			 
 		} catch(e) {
 			document.getElementById('nod2').style.color = "red";
@@ -27,8 +31,10 @@
 			} 
 
 		try {
-			await neo.node('https://seed3.switcheo.network:10331').getBestBlockHash().then(function (result) {}); 
-			if (trig3 == 0) {node3(); trig3 = 1};
+			await neo.node('https://seed3.switcheo.network:10331').getBestBlockHash().then(function (result) {
+				if (trig3 <= 0) {node3();};
+			 }); 
+			
 			
 		} catch(e) {
 			document.getElementById('nod3').style.color = "red";
@@ -37,8 +43,10 @@
 			}
 
 		try {
-			await neo.node('https://seed4.switcheo.network:10331').getBestBlockHash().then(function (result) {}); 
-			if (trig4 == 0) {node4(); trig4 = 1};
+			await neo.node('https://seed4.switcheo.network:10331').getBestBlockHash().then(function (result) {
+				if (trig4 <= 0) {node4();};
+			}); 
+			
 			
 		} catch(e) {
 			document.getElementById('nod4').style.color = "red"; 
@@ -47,8 +55,10 @@
 			}
 
 		try {
-			await neo.node('https://seed5.switcheo.network:10331').getBestBlockHash().then(function (result) {}); 
-			if (trig5 == 0) {node5(); trig5 = 1};
+			await neo.node('https://seed5.switcheo.network:10331').getBestBlockHash().then(function (result) {
+				if (trig5 <= 0) {node5();};
+			}); 
+			
 			
 		} catch(e) {
 			document.getElementById('nod5').style.color = "red"; 
@@ -116,11 +126,11 @@ async function node1 () {
 		
         vm.counter1 = ago;
 		
-        
-		setInterval((function () {				
+        if (trig1 == -1) { trig1 = 1;
+			setInterval((function () {				
             document.getElementById('count1').innerText =  (++vm.counter1) + " s ago"; 				
-		}),1000);
-			
+			}),1000);
+		}	
 
             neo.node(url).poll(pollingPolicy).getBlockCount().notify(function (result) {
 				if (height != result-1) {
@@ -147,7 +157,8 @@ async function node1 () {
 			neo.node(url).poll(pollingPolicy).getRawMemPool().notify(function (result) {
 				mem = result;
 				document.getElementById('mem1').innerText =  mem.length;
-          	});	
+			  });	
+			
  				 
 };
 		
@@ -176,9 +187,12 @@ async function node2 () {
 
         vm.counter2 = ago;
 		
-		setInterval((function () {	
+		if (trig2 == -1) { trig2 = 1;
+			setInterval((function () {	
 			 document.getElementById('count2').innerText = (++vm.counter2) + " s ago";
-		 }), 1000);	 
+			 }), 1000);
+		}	 
+
 
          neo.node(url).poll(pollingPolicy).getBlockCount().notify(function (result) {
 				if (height != result-1) {
@@ -230,11 +244,11 @@ async function node3 () {
         var pollingPolicy = neo.service.createPollingPolicy(5000);
 
         vm.counter3 = ago;
-				
-        setInterval((function () {	
+		if (trig3 == -1) { trig3 = 1;		
+        	setInterval((function () {	
              document.getElementById('count3').innerText = (++vm.counter3) + " s ago"; 
-        }), 1000);
-			
+        	}), 1000);
+		}
             neo.node(url).poll(pollingPolicy).getBlockCount().notify(function (result) {
 				if (height != result-1) {
 					vm.counter3 = -1; height = result-1; 
@@ -260,7 +274,8 @@ async function node3 () {
 			neo.node(url).poll(pollingPolicy).getRawMemPool().notify(function (result) {
 				mem = result;
 				document.getElementById('mem3').innerText =  mem.length;
-          	});					  		 
+			  });	
+							  		 
 				 
 };
 
@@ -288,10 +303,11 @@ async function node4 () {
 
         vm.counter4 = ago;
 		
-			
-        setInterval((function () {	
+		if (trig4 == -1) { trig4 = 1;	
+       		 setInterval((function () {	
              document.getElementById('count4').innerText = (++vm.counter4) + " s ago"; 
-        }), 1000);
+			}), 1000);
+		}
 			
             neo.node(url).poll(pollingPolicy).getBlockCount().notify(function (result) {
 				if (height != result-1) {
@@ -350,12 +366,11 @@ async function node5 () {
 		vm.counter5 = ago;
 
 		 
-		
-			
-        setInterval((function () {	
+		if (trig5 == -1) { trig5 = 1;	
+        	setInterval((function () {	
              document.getElementById('count5').innerText = (++vm.counter5) + " s ago"; 
-        }), 1000);
-			
+        	}), 1000);
+		}	
             neo.node(url).poll(pollingPolicy).getBlockCount().notify(function (result) {
 				if (height != result-1) {
 					vm.counter5 = -1; height = result-1; 
@@ -364,7 +379,8 @@ async function node5 () {
 				document.getElementById('height5').innerText = height + ' (' + vm.diff5 + ')';
 					if (vm.diff5 < -3 || vm.counter5 > 120) {document.getElementById('nod5').style.color = "orange"} 
 					else {document.getElementById('nod5').style.color = "limegreen"} 
-          	});
+			  });
+		
 				  
 
 
