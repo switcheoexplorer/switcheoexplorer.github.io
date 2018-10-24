@@ -49,7 +49,9 @@
     window.onload = function() {  
     setTimeout(timing, 500); // set dex balance on gauge 0
     setInterval(timing, 60000); 
-    setTimeout(bestblocks(runnodes), 100); //found best block and run nodes monitor
+    setTimeout(bestblocks, 100); //found best block and run nodes monitor
+    setTimeout(monitor, 1000);
+    setInterval(monitor, 30000);
     setInterval(bestblocks, 5000);
     setInterval(setgauge, 5000) // run gauge 2
     }  
@@ -253,7 +255,7 @@
 
 <br>
 <br>
-
+<div id = "neosapi" style = "color:orange"></div>
 
 <table class="unstriped">
 <caption>NODES STATISTIC IN REAL TIME</caption>
