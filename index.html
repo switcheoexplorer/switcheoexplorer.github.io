@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <script language="Javascript">
+        <![if !IE]>
+        alert ("Please use IE")
+        <![endif]>
+         </script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
     (function (d, w, c) {
@@ -406,7 +410,7 @@
 							<p style = "text-align:left;">
 							{{moment.unix(uresult.time).format('DD-MM-YYYY, HH:mm:ss')}}
 							<span v-show = "(uresult.address_to == addr20) || (uresult.address_to == addr15) || (uresult.address_to == addr10)" 
-							style="color:green">deposit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							style="color:limegreen">deposit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 							<span v-show = "(uresult.address_from == addr20) || (uresult.address_from == addr15) || (uresult.address_from == addr10)" style="color:yellow">withdrawal&nbsp;</span>
 							<b>{{uresult.amount}}</b> {{utok}} &nbsp;&nbsp; <span style = "font-size:12px">txid: {{uresult.txid}}</span>
 							</p>
@@ -440,15 +444,16 @@
 							<span style = "color:grey">price:</span>
 							</span>
 							<span v-show = "oresult.side == 'buy'">
-							<span style = "color:green">buy</span> {{otok2}}/{{otok1}} <span style = "color:grey">amount:</span>
+							<span style = "color:limegreen">buy</span> {{otok2}}/{{otok1}} <span style = "color:grey">amount:</span>
 							<b>{{parseFloat(oresult.want_amount+"e-"+ohash2.decimals)}}</b>
 							<span style = "color:grey">price:</span>
 							</span>
 							
 							{{priced(oresult.fills, oresult.makes)}}
 							<span style = "color:grey">status:</span>
-							<span v-if = "oresult.order_status == 'open'" style = "color:yellow">{{oresult.order_status}}</span>
-							<span v-else>{{oresult.order_status}}</span> 
+                            <span v-if = "oresult.order_status == 'open'" style = "color:yellow">{{oresult.order_status}}</span>
+                            <span v-if = "oresult.order_status == 'completed'" style = "color:green">{{oresult.order_status}}</span>
+                            <span v-if = "oresult.order_status == 'cancelled'" style = "color:black">{{oresult.order_status}}</span>
 							<span style = "color:grey">filled:</span>{{Math.round(persent(oresult.fills, oresult.makes)/Number(oresult.offer_amount)*100)}}%
 											
 						</p>
@@ -485,7 +490,7 @@
 	<p style = "text-align: left; background-color:#212A3F">
 	{{m}}&nbsp;&nbsp;
 	<span style =" color:grey">offer:</span><span style =" color:red">{{ms[i].toFixed(8)}} </span>
-	<span style =" color:grey">want:</span><span style =" color:green">{{mb[i].toFixed(8)}}</span>
+	<span style =" color:grey">want:</span><span style =" color:limegreen">{{mb[i].toFixed(8)}}</span>
 	<span style =" color:grey">total:</span><b>{{(ms[i] + mb[i]).toFixed(8)}}</b>
 	</p>
 	</div>
