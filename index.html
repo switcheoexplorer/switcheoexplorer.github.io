@@ -115,7 +115,7 @@
 <!--Input address-->  
   <div class="row" >
 	<input style="background-color: #32374B; color:#FFFFFF; width:423px; margin:auto auto 1px auto;" autofocus type="text"
-	v-on:keyup.enter = "request" v-model.trim = "addresses[0]" placeholder = "Enter NEO address...">
+	v-on:keyup.enter = "request" v-model.trim = "addresses[0]" placeholder = "Enter NEO address">
   </div>
   
   
@@ -342,7 +342,7 @@
 <div v-for="(item, index) in addresses" >
 		
       <input style="background-color: #212A3F; margin:0px 0px 15px 40px; display:inline; color:#FFFFFF; width:423px;" 
-      autofocus type="text" v-model="addresses[index]" placeholder = "Enter NEO address...">     
+      autofocus type="text" v-model="addresses[index]" placeholder = "Enter NEO address">     
       <a href="#" @click="deleteItem(addresses, index)"><b style = "color:red">&nbsp;&nbsp;&nbsp;X</b></a>
     </div>	
 	<button class="button" v-on:click = "addItem(addresses)">Add more...</button>
@@ -352,7 +352,7 @@
 <!--Output BALANCE	-->
 <section id="content-tab1">							  
 	<div class="row">
-    <p v-if = "(addresses.filter(word => word != '')).length == 0 "><b>Smart contract balance. Enter address...</b></p> 
+    <p v-if = "(addresses.filter(word => word != '')).length == 0 "><b>Smart contract balance. Enter address.</b></p> 
 	<p v-else-if = "(addresses.filter(word => word != '')).length == 1"><b>Smart contract balance. Address: {{addresses[0]}}</b></p>
 	<p v-else ><b>Smart contract balance. Address: MULTI</b></p>
 	
@@ -390,7 +390,7 @@
 <!-- Output TRANSFERS -->    
 <section id="content-tab2"> 	
 	<div class="row">	
-    <p v-if = "(addresses.filter(word => word != '')).length == 0 "><b>Deposits and withdrawals. Enter address...</b></p> 
+    <p v-if = "(addresses.filter(word => word != '')).length == 0 "><b>Deposits and withdrawals. Enter address.</b></p> 
 	<p v-else-if = "(addresses.filter(word => word != '')).length == 1"><b>Deposits and withdrawals. Address: {{addresses[0]}}</b></p>
 	<p v-else ><b>Deposits and withdrawals. Address: MULTI</b></p>			
 		
@@ -423,7 +423,7 @@
 	<!-- Output ORDERS--> 
 <section id="content-tab3"> 	
 <div class="row">	
-<p v-if = "(addresses.filter(word => word != '')).length == 0 "><b>Last 200 orders. Enter address...</b></p> 
+<p v-if = "(addresses.filter(word => word != '')).length == 0 "><b>Last 200 orders. Enter address.</b></p> 
 <p v-else-if = "(addresses.filter(word => word != '')).length == 1"><b>Last 200 orders. Address: {{addresses[0]}}</b></p>
 	<p v-else ><b>Last 200 orders. Address: MULTI</b></p>
 	
@@ -465,7 +465,7 @@
 <section id = "content-tab4"> 	
 <div class="row">
 
-<p v-if = "(addresses.filter(word => word != '')).length == 0 "><b>Trading volume for last 200 orders. Enter address...</b></p>   
+<p v-if = "(addresses.filter(word => word != '')).length == 0 "><b>Trading volume for last 200 orders. Enter address.</b></p>   
 <p v-else-if = "(addresses.filter(word => word != '')).length == 1"><b>Trading volume for last 200 orders. Address: {{addresses[0]}}</b></p>
 	<p v-else ><b>Trading volume for last 200 orders. Address: MULTI</b></p>	
 
