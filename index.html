@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <script language="Javascript">
-        <![if !IE]>
-        alert ("Please use IE")
-        <![endif]>
-         </script>
+       <!--[if !IE]>
+       alert("Internet Explorer is not supported! Chrome, Firefox, Opera and Edge are supported browsers.")
+        <![endif]-->   
+    </script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
     (function (d, w, c) {
@@ -47,11 +47,19 @@
 <title>Switcheo Smart Contract Explorer</title>
 </head><body>
 
+        <script language="Javascript">
+                <!--[if !IE]>
+                 document.getElementById('aler').innerHTML = "Internet Explorer is not supported! Chrome, Firefox, Opera and Edge are supported browsers.";
+                 <![endif]-->
+                 
+                  </script>
+
 <div style = " width:100%; background:green"> You can use these links:  
 <a style = "color:white; font-weight:bold" target="_blank" href = "https://switcheoexplorer.github.io/"> https://switcheoexplorer.github.io</a>, 
 <a style = "color:white; font-weight:bold" target="_blank" href = "https://switchstatistic.000webhostapp.com/">https://switchstatistic.000webhostapp.com</a>, 
 <a style = "color:white; font-weight:bold" target="_blank" href = "https://t.me/joinchat/AAAAAEcuc4qsxMgIVcaQug ">https://t.me/SwitcheoSmartExplorer</a>
- </div>    
+ </div> 
+ <div id = "aler" style = "width:100%; background:red; font-weight:bold" ></div> 
 
 <img id = "fade" src = "./img/bg.jpg">
 <div class="container" id="api" style = "min-width: 890px" v-cloak>
