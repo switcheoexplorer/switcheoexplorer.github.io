@@ -215,7 +215,7 @@ for (var i = 0; i < nodesg.length; ++i) {
   gp(i); 
 };
 
-setTimeout(getl, 5000);
+setTimeout(getl, 10000);
 
 // create links array and draw graph
 function getl () {
