@@ -142,6 +142,7 @@ var nodesg = [ {"id": "http://seed1.aphelion-neo.com:10332", "ip": "18.194.0.22"
 ];
 
 
+
 setInterval(runbest, 5000);
 
 var bestbl, ind, counter2, bestago;
@@ -217,7 +218,7 @@ for (var i = 0; i < nodesg.length; ++i) {
   gp(i); 
 };
 
-setTimeout(getl, 2000);
+//setTimeout(getl, 1000);
 
 // create links array and draw graph
 function getl () {
