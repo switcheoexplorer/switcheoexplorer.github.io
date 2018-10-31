@@ -220,7 +220,7 @@ for (var i = 0; i < nodesg.length; ++i) {
   gp(i); 
 };
 
-setTimeout(getl, 10000);
+setTimeout(getl, 3000);
 
 // create links array and draw graph
 function getl () {
