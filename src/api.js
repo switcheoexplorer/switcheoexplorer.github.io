@@ -301,7 +301,7 @@ mem: ['','','','',''], // mempool
 results: {},
 tokens: {},
 contr: "v20",
-tabn: "tabneo",
+tabn: "status",
 uhistory: {},
 xaddress: "",
 orders: {},
