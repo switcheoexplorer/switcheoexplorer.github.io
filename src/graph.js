@@ -142,9 +142,6 @@ var nodesg = [ {"id": "http://seed1.aphelion-neo.com:10332", "ip": "18.194.0.22"
 ];
 
 
-neo.node('http://node2.ams2.bridgeprotocol.io:10332').getPeers().then(function (result) {alert(result)});
-neo.node('https://node2.ams2.bridgeprotocol.io:10332').getPeers().then(function (result) {alert(result)});
-
 setInterval(runbest, 5000);
 
 var bestbl, ind, counter2, bestago;
@@ -220,7 +217,7 @@ for (var i = 0; i < nodesg.length; ++i) {
   gp(i); 
 };
 
-setTimeout(getl, 3000);
+setTimeout(getl, 2000);
 
 // create links array and draw graph
 function getl () {
