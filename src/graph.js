@@ -152,7 +152,7 @@ function runbest() {
     blc(i)
     };
 
-    setTimeout(outbl, 1500);
+    setTimeout(outbl, 3000);
 
     function outbl() {
     for (var x = 0; x < blocks.length; ++x) {
