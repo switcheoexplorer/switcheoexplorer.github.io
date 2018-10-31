@@ -143,7 +143,7 @@ var nodesg = [ {"id": "http://seed1.aphelion-neo.com:10332", "ip": "18.194.0.22"
 
 
 neo.node('http://node2.ams2.bridgeprotocol.io:10332').getPeers().then(function (result) {alert(result)});
-neo.node('https://node2.ams2.bridgeprotocol.io:10331').getPeers().then(function (result) {alert(result)});
+neo.node('https://node2.ams2.bridgeprotocol.io:10332').getPeers().then(function (result) {alert(result)});
 
 setInterval(runbest, 5000);
 
