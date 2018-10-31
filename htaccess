@@ -4,4 +4,4 @@ php_value display_errors 1
 # DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:6994629:
 RewriteEngine On
 RewriteCond %{HTTPS} on
-RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteRule (.*) http://switcheoexplorer.github.io/$1 [R=301,L]
