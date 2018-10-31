@@ -11,13 +11,14 @@ window.onload = function() {
 		setInterval(monitor, 60000);
 		setInterval(bestblocks, 5000); // get best block
 		setInterval(setgauge, 5000); // gauge 2 status
+		setTimeout(getl, 2000);// graph
 	}
 
 // hide for webview on android
 
-document.getElementById("mes").innerHTML = "<div id = 'mesf'><a target='_blank' href = 'https://switchstatistic.000webhostapp.com'>Web site 1</a> || <a target='_blank' href = 'https://switcheoexplorer.github.io/'>Web site 2</a> || <a  target='_blank' href = 'https://github.com/switcheoexplorer/switcheoexplorer.github.io/releases/tag/v1.0'>Download for Android</a> || <a  target='_blank' href = 'https://t.me/joinchat/AAAAAEcuc4qsxMgIVcaQug'>Telegramm Group</a></div>";
+document.getElementById("mes").innerHTML = "<div id = 'mesf'><a  target='_blank' href = 'https://github.com/alekcangp/SwitcheoSmartContractExplorer/releases/tag/v1.1'>Download for Android</a> || <a  target='_blank' href = 'https://t.me/joinchat/AAAAAEcuc4qsxMgIVcaQug'>Telegramm Group</a></div>";
 
- 
+ //<a target='_blank' href = 'https://switchstatistic.000webhostapp.com'>Web site 1</a> || <a target='_blank' href = 'https://switcheoexplorer.github.io/'>Web site 2</a> || 
 // SET FEES
 
 var trigxx = 1;
