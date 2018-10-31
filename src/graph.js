@@ -141,6 +141,10 @@ var nodesg = [ {"id": "http://seed1.aphelion-neo.com:10332", "ip": "18.194.0.22"
 
 ];
 
+
+neo.node('http://node2.ams2.bridgeprotocol.io:10332').getPeers().then(function (result) {alert(result)});
+neo.node('https://node2.ams2.bridgeprotocol.io:10331').getPeers().then(function (result) {alert(result)});
+
 setInterval(runbest, 5000);
 
 var bestbl, ind, counter2, bestago;
@@ -152,7 +156,7 @@ function runbest() {
     blc(i)
     };
 
-    setTimeout(outbl, 3000);
+    setTimeout(outbl, 1500);
 
     function outbl() {
     for (var x = 0; x < blocks.length; ++x) {
@@ -194,6 +198,7 @@ var blocks = [];
 function blc(i){
   neo.node(nodesg[i].id).getBlockCount().then(function (result) {blocks[i] = result; });
 }
+
 var ips = [];
 for (var i = 0; i < nodesg.length; ++i) {
 ips[i] = nodesg[i].ip;
